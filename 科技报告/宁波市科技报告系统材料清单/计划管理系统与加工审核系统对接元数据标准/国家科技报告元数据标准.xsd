@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 被2012 () 使用XMLSpy v编辑的 (http://www.altova.com) by -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" id="科技报告元数据传输">
+	<xs:element name="ReportData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportGroup">
+					<xs:complexType>
+						<xs:group ref="reports">
+							<xs:annotation>
+								<xs:documentation>
+									科技报告
+								</xs:documentation>
+							</xs:annotation>
+						</xs:group>
+						<xs:attribute name="OutPutDate" type="xs:date" use="required">
+							<xs:annotation>
+								<xs:documentation>生成时间</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="OutPutCount" type="xs:int" use="required">
+							<xs:annotation>
+								<xs:documentation>报告数量</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="reports">
+		<xs:sequence>
+			<xs:element name="Report" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PlanInfo">
+							<xs:annotation>
+								<xs:documentation>所属计划信息</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="PlanName" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>计划名称</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="PlanID" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>计划ID</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Department" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>主管部门</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ProjectSubjectInfo">
+							<xs:annotation>
+								<xs:documentation>项目课题信息</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="ProjectSubjectID" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>项目课题编号</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ProjectSubjectName" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>项目课题名称</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ResponsiblePerson" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>项目负责人</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="LinkMan">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="LinkManName" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>联系人</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="LinkManPhone" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>联系人电话</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="LinkManEmail" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>联系人邮箱</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="LinkManUnit" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>联系人单位</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="FieldName" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>技术领域</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="FieldID" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>技术领域代码</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="TotalAmount" type="xs:float">
+										<xs:annotation>
+											<xs:documentation>总经费</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="StateAmount" type="xs:float" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>国拨经费</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ProvinceAmount" type="xs:float" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>地方财政</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="SelfRaisedFunds" type="xs:float" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>自筹经费</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="UndertakeOrg" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>项目承担单位</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="StartDate" type="xs:date">
+										<xs:annotation>
+											<xs:documentation>项目开始日期</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="EndDate" type="xs:date">
+										<xs:annotation>
+											<xs:documentation>项目结束日期</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="CooperationUnitGroup" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>项目合作单位</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="CooperationUnit" minOccurs="0" maxOccurs="unbounded"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="ApprovalAbstractCHN" type="xs:string" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>立项摘要</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ExaminationAbstractCHN" type="xs:string" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>结题验收摘要</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ReportInfo">
+							<xs:annotation>
+								<xs:documentation>报告基本信息</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="ReportId" type="ReportIdVal">
+										<xs:annotation>
+											<xs:documentation>报告编号</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ReportType" type="reportType">
+										<xs:annotation>
+											<xs:documentation>报告类型</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Classification" type="xs:string" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>中图分类</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="TitleCHN" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>报告中文名</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="TitleENG" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>报告英文名</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="PublicScope" type="publicType">
+										<xs:annotation>
+											<xs:documentation>公开范围</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="PublicDate" type="publicDateType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>延期时间</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="WriteUnit" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>编制单位</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="WriteDate" type="xs:date">
+										<xs:annotation>
+											<xs:documentation>编制时间</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="AbstractCHN" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>中文摘要</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="AbstractENG" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>英文摘要</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="KeyWordsCHN" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>中文关键词</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="KeyWordsENG" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>英文关键词</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Remarks" type="xs:string" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>备注</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="AuthorGroup" type="Authors"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ReportFileInfo">
+							<xs:annotation>
+								<xs:documentation>报告文件信息</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="FileName" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>科技报告正文文件名</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="FileURL" type="xs:string" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>科技报告正文下载地址</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="OtherInfo">
+							<xs:annotation>
+								<xs:documentation>其他扩展字段</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="UndertakeArea" type="Area">
+										<xs:annotation>
+											<xs:documentation>项目承担单位地区</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="GUID" type="xs:string" use="required">
+						<xs:annotation>
+							<xs:documentation>全局唯一ID</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="Authors">
+		<xs:sequence>
+			<xs:element name="Author" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:annotation>
+							<xs:documentation>作者详细</xs:documentation>
+						</xs:annotation>
+						<xs:element name="AuthorNameCN" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>作者姓名中文</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="AuthorNameEN" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>作者姓名中文</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="AuthorUnitCN" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>作者单位中文</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="AuthorUnitEN" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>作者单位英文</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="Order" type="xs:int" use="required">
+						<xs:annotation>
+							<xs:documentation>作者顺序</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ReportIdVal">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{9}--[0-9A-Za-z]{4,20}/\d{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="publicType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01">
+				<xs:annotation>
+					<xs:documentation>
+						公开
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="02">
+				<xs:annotation>
+					<xs:documentation>
+						延期公开
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="03">
+				<xs:annotation>
+					<xs:documentation>
+						不公开
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="reportType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01">
+				<xs:annotation>
+					<xs:documentation>立项报告</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="02">
+				<xs:annotation>
+					<xs:documentation>进展报告</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="03">
+				<xs:annotation>
+					<xs:documentation>中期报告</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="04">
+				<xs:annotation>
+					<xs:documentation>最终报告</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="publicDateType">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[1-5]{1}">
+				<xs:annotation>
+					<xs:documentation>
+						1-5年
+					</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Area">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="北京"/>
+			<xs:enumeration value="天津"/>
+			<xs:enumeration value="河北"/>
+			<xs:enumeration value="山西"/>
+			<xs:enumeration value="内蒙古"/>
+			<xs:enumeration value="辽宁"/>
+			<xs:enumeration value="吉林"/>
+			<xs:enumeration value="黑龙江"/>
+			<xs:enumeration value="上海"/>
+			<xs:enumeration value="江苏"/>
+			<xs:enumeration value="浙江"/>
+			<xs:enumeration value="安徽"/>
+			<xs:enumeration value="福建"/>
+			<xs:enumeration value="江西"/>
+			<xs:enumeration value="山东"/>
+			<xs:enumeration value="河南"/>
+			<xs:enumeration value="湖北"/>
+			<xs:enumeration value="湖南"/>
+			<xs:enumeration value="广东"/>
+			<xs:enumeration value="广西"/>
+			<xs:enumeration value="海南"/>
+			<xs:enumeration value="重庆"/>
+			<xs:enumeration value="四川"/>
+			<xs:enumeration value="贵州"/>
+			<xs:enumeration value="云南"/>
+			<xs:enumeration value="西藏"/>
+			<xs:enumeration value="陕西"/>
+			<xs:enumeration value="甘肃"/>
+			<xs:enumeration value="青海"/>
+			<xs:enumeration value="宁夏"/>
+			<xs:enumeration value="新疆"/>
+			<xs:enumeration value="香港"/>
+			<xs:enumeration value="澳门"/>
+			<xs:enumeration value="台湾"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

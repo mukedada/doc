@@ -1,0 +1,1 @@
+站点域名（kjbg.sti.gov.cn）绑定在172.16.1.197这台主机上，数据库绑定在kjbgconn.sti.gov.cn这个域名上
